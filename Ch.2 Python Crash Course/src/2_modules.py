@@ -18,3 +18,9 @@ plt.show()
 from collections import defaultdict, Counter
 lookup = defaultdict(int)
 my_counter = Counter()
+
+#2e) Why not to import the entire contents of a module
+    # --> Might accidentally overwrite a function or variable name
+# match = 10
+# from re import *    # uh oh, re has a "match" function
+# print(match)        # "<function match at 0x10281e6a8>"
