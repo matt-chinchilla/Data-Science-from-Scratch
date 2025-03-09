@@ -2,7 +2,7 @@
                     # object mapping keys to counts
 
 from collections import Counter
-c = Counter[[0, 1, 2, 0]]                           # c is basically {0: 2, 1: 1, 2: 1}
+c = Counter([0, 1, 2, 0])                           # c is basically {0: 2, 1: 1, 2: 1}
 
 
 #10b) Makes a really easy way to solve word-counting problems
