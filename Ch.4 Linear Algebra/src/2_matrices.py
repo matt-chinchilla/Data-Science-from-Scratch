@@ -79,4 +79,33 @@ data = [[70, 170, 40],
 
 #------------------------------------------------------------------------------------
 #2f) An example where we use a matrix to represent a binary pairing
-friendships = [(0,1),(0,2)]
+friendships = [(0,1), (0,2), (1,2), (1,3), (2,3), (3,4),
+               (4,5), (5,6), (5,7), (6,8), (7,8), (8,9)]
+
+        # Can also be represented as the following Matrix
+#              user 0  1  2  3  4  5  6  7  8  9
+#
+friend_matrix =   [[0, 1, 1, 0, 0, 0, 0, 0, 0, 0],   # user 0
+                   [1, 0, 1, 1, 0, 0, 0, 0, 0, 0],   # user 1  
+                   [1, 1, 0, 1, 0, 0, 0, 0, 0, 0],   # user 2
+                   [0, 1, 1, 0, 1, 0, 0, 0, 0, 0],   # user 3
+                   [0, 0, 0, 1, 0, 1, 0, 0, 0, 0],   # user 4
+                   [0, 0, 0, 0, 1, 0, 1, 1, 1, 0],   # user 5
+                   [0, 0, 0, 0, 0, 1, 0, 0, 1, 0],   # user 6
+                   [0, 0, 0, 0, 0, 1, 0, 0, 1, 1],   # user 7
+                   [0, 0, 0, 0, 0, 1, 1, 1, 0, 1],   # user 8
+                   [0, 0, 0, 0, 0, 0, 0, 0, 1, 0]]   # user 9
+
+#------------------------------------------------------------------------------------
+#2g) "Matrix Lookup" is much simpler for finding the connection that parsing through every edge
+assert friend_matrix[0][2] == 1, "0 and 2 are friends"
+assert friend_matrix[0][8] == 0, "0 and 8 are not friends"
+
+
+#------------------------------------------------------------------------------------
+#2h) Inspecting node connections by only looking at a column (or row) that it corresponds to
+
+# only need to look at one row
+friends_of_five = [i
+                   for i, is_friend in enumerate(friend_matrix[5])
+                   if is_friend]
