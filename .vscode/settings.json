@@ -1,0 +1,5 @@
+{
+    "python.analysis.extraPaths": [
+        "./Ch.4 Linear Algebra/src"
+    ]
+}
