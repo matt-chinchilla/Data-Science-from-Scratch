@@ -11,7 +11,7 @@
 import sys
 from pathlib import Path
 project_root = Path(__file__).resolve().parents[2] # 2 layers deep
-probability_src = project_root / "Ch.6 Probability" / "src" # Construct the path
+probability_src = project_root / "Ch.6-Probability" / "src" # Construct the path
 sys.path.append(str(probability_src)) # Now Line 31 works
 
 

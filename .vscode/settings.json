@@ -1,6 +1,6 @@
 {
     "python.analysis.extraPaths": [
-        "./Ch.4 Linear Algebra/src",
+        "./Ch.4-Linear-Algebra/src",
         "./Ch.6 Probability/src"
     ]
 }

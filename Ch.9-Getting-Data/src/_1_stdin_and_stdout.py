@@ -27,3 +27,37 @@ for line in sys.stdin:
 
 # print goes to sys.stdout
 print(count)
+
+
+#-----------------------------------------------------------------------------------------------
+#2) Script that coutns the words in its input and writes out the most common ones
+
+# most_common_words.py
+import sys
+from collections import Counter
+
+# pass in number of words as first argument
+try:
+    num_words = int(sys.argv[1])
+except:
+    print("usage: most_common_words.py num_words")
+    sys.exit(1)
+
+counter = Counter(word.lower()                          # all lowercase
+                  for line in sys.stdin
+                  for word in line.strip().split()      # Split on spaces
+                  if word)                              # Skip empty words
+
+for word, count in counter.most_common(num_words):
+    sys.stdout.write(str(count))                        # Write the count
+    sys.stdout.write("\t")                              # Tab
+    sys.stdout.write(word)                              # Write the word
+    sys.stdout.write("\n")                              # New line
+
+    # Example output
+    ## "type the_bible.txt | python most_common_words.py 5"
+      ### 36397    the
+      ### 30031    and
+      ### 20163    of
+      ### 7154     to
+      ### 6484     in
