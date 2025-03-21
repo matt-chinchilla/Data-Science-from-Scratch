@@ -58,6 +58,6 @@ assert len(important_paragraphs) == 1
 # Warning: will return the same <span> multiple times
 # if it sits inside multiple <div>s
 # Be more clever if that is the case
-spans_inside_divs = [spans_inside_divs
+spans_inside_divs = [span
                      for div in soup('div')         # for each <div> tag
                      for span in div('span')]       # for each <span> inside
