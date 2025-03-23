@@ -20,7 +20,11 @@ assert data_range(num_friends) == 99
 from B_central_tendencies import mean
 
 import sys
-sys.path.append(r"C:\Users\chiri\Programming Projects\Data-Science-from-Scratch\Ch.4 Linear Algebra\src")
+from pathlib import Path
+project_root = Path(__file__).resolve().parents[2] # 2 layers deep
+linear_alg_src = project_root / "Ch.4-Linear-Algebra" / "src" # Construct the path
+sys.path.append(str(linear_alg_src))
+
 from A_vectors import sum_of_squares
 
 def de_mean(xs: List[float]) -> List[float]:
